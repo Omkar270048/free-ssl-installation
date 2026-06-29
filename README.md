@@ -9,7 +9,7 @@ Here’s a **simple clean step-by-step SSL setup doc** for your setup (Django + 
 
 * EC2 Ubuntu server running
 * Django running in Docker on port `8000`
-* Domain (e.g. `knowu.in`) from GoDaddy pointing to EC2 IP
+* Domain (e.g. `your_domain.in`) from GoDaddy pointing to EC2 IP
 * Nginx installed
 
 ---
@@ -70,7 +70,7 @@ Paste:
 ```nginx id="d5"
 server {
     listen 80;
-    server_name knowu.in www.knowu.in;
+    server_name your_domain.in www.your_domain.in;
 
     location / {
         proxy_pass http://127.0.0.1:8000;
@@ -120,7 +120,7 @@ sudo certbot --nginx
 During setup:
 
 * Enter email
-* Select `knowu.in` and `www.knowu.in`
+* Select `your_domain.in` and `www.your_domain.in`
 * Choose **Redirect HTTP → HTTPS (YES)**
 
 ---
@@ -130,7 +130,7 @@ During setup:
 Now your site is live:
 
 ```text id="d9"
-https://knowu.in
+https://your_domain.in
 ```
 
 ---
